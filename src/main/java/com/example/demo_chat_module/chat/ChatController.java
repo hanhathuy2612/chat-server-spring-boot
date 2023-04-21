@@ -1,5 +1,6 @@
 package com.example.demo_chat_module.chat;
 
+import com.example.demo_chat_module.entity.ChatMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;

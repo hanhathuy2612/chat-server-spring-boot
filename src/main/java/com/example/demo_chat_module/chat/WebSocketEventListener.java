@@ -1,5 +1,7 @@
 package com.example.demo_chat_module.chat;
 
+import com.example.demo_chat_module.entity.ChatMessage;
+import com.example.demo_chat_module.entity.enumerate.MessageType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
@@ -32,7 +34,7 @@ public class WebSocketEventListener {
             log.info("User Disconnected : " + username);
             
             ChatMessage chatMessage = new ChatMessage();
-            chatMessage.setType(ChatMessage.MessageType.LEAVE);
+            chatMessage.setType(MessageType.LEAVE);
             chatMessage.setSender(username);
             
             messagingTemplate.convertAndSend("/topic/public", chatMessage);
